@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Seat Booking System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <script src="script.js"></script>
+
+    <!-- LOGIN SECTION -->
+    <div id="authSection" class="container text-center">
+        <div id="loginContainer" class="login-container">
+            <h2 class="mb-4"> Welcome to Quick Seat Login</h2>
+            <input type="text" id="loginUsername" class="form-control mb-3" placeholder="Enter Username">
+            <input type="password" id="loginPassword" class="form-control mb-3" placeholder="Enter Password">
+            <button class="btn btn-dark w-100" onclick="login()">Login</button>
+            <p class="mt-3">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        </div>
+        
+        <div id="signupContainer" class="login-container hidden">
+            <h2 class="mb-4">Sign Up</h2>
+            <input type="text" id="signupUsername" class="form-control mb-3" placeholder="Enter Username">
+            <input type="password" id="signupPassword" class="form-control mb-3" placeholder="Enter Password">
+            <button class="btn btn-dark w-100" onclick="signup()">Sign Up</button>
+            <p class="mt-3">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+    
+
+
+ <!-- Slideshow Container (Initially Hidden) -->
+<div id="slideshowContainer" class="hidden">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="img1.jpg" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="img2.jpg" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="img3.jpg" class="d-block w-100" alt="Image 3">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="img4.jpg" class="d-block w-100" alt="Image 4">
+            </div>
+        </div>
+    </div>
+</div>
+    
+        <!-- Bootstrap 5 JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SEAT BOOKING SECTION (HIDDEN UNTIL LOGIN) -->
+    <div id="bookingSection" class="container text-center hidden">
+        <h2 class="mb-4">Seat Booking</h2>
+        <label for="pickupPoint">Pick-Up Point:</label>
+        <select id="pickupPoint" class="form-control"> 
+                <option value="Ahmednagar">Ahmednagar</option>
+                <option value="Akola">Akola</option>
+                <option value="Amravati">Amravati</option>
+                <option value="Aurangabad">Aurangabad</option>
+                <option value="Beed">Beed</option>
+                <option value="Bhandara">Bhandara</option>
+                <option value="Buldhana">Buldhana</option>
+                <option value="Chandrapur">Chandrapur</option>
+                <option value="Dhule">Dhule</option>
+                <option value="Gadchiroli">Gadchiroli</option>
+                <option value="Gondia">Gondia</option>
+                <option value="Hingoli">Hingoli</option>
+                <option value="Jalgaon">Jalgaon</option>
+                <option value="Jalna">Jalna</option>
+                <option value="Kolhapur">Kolhapur</option>
+
+        </select>
+        <label for="dropPoint">Drop Point:</label>
+        <select id="dropPoint" class="form-control"> 
+                <option value="Latur">Latur</option>
+                <option value="Mumbai City">Mumbai City</option>
+                <option value="Mumbai Suburban">Mumbai Suburban</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Nanded">Nanded</option>
+                <option value="Nandurbar">Nandurbar</option>
+                <option value="Nashik">Nashik</option>
+                <option value="Osmanabad">Osmanabad</option>
+                <option value="Palghar">Palghar</option>
+                <option value="Parbhani">Parbhani</option>
+                <option value="Pune">Pune</option>
+                <option value="Raigad">Raigad</option>
+                <option value="Ratnagiri">Ratnagiri</option>
+                <option value="Sangli">Sangli</option>
+                <option value="Satara">Satara</option>
+
+
+
+                
+
+        </select>
+        <label for="busNumber">Select Bus Number:</label>
+        <select id="busNumber" class="form-control"> 
+            <option value="MH-16-1234">MH-16-1234</option>
+            <option value="MH-30-2345">MH-30-2345</option>
+            <option value="MH-27-3456">MH-27-3456</option>
+            <option value="MH-20-4567">MH-20-4567</option>
+            <option value="MH-23-5678">MH-23-5678</option>
+            <option value="MH-36-6789">MH-36-6789</option>
+            <option value="MH-28-7890">MH-28-7890</option>
+            <option value="MH-34-8901">MH-34-8901</option>
+            <option value="MH-18-9012">MH-18-9012</option>
+            <option value="MH-33-1122">MH-33-1122</option>
+            <option value="MH-35-2233">MH-35-2233</option>
+            <option value="MH-44-3344">MH-44-3344</option>
+            <option value="MH-19-4455">MH-19-4455</option>
+            <option value="MH-21-5566">MH-21-5566</option>
+            <option value="MH-09-6677">MH-09-6677</option>
+
+        </select>
+        <div id="seatContainer" class="d-flex flex-wrap justify-content-center my-3"></div>
+        <p>Selected Seats: <span id="selectedSeatsCount">0</span></p>
+        <button class="btn btn-danger" onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+
+    <!-- PAYMENT SECTION -->
+    <div id="paymentSection" class="container text-center hidden">
+        <h2>Select Payment Method</h2>
+        <button class="btn btn-primary" onclick="selectPayment('Card')">Card Payment</button>
+        <button class="btn btn-secondary" onclick="selectPayment('Offline')">Offline Payment</button>
+    </div>
+
+    <!-- CARD PAYMENT -->
+    <div id="cardDetails" class="container text-center hidden">
+        <h2>Enter Card Details</h2>
+        <input type="text" id="cardNumber" class="form-control" placeholder="Card Number"><br>
+        <input type="text" id="cvv" class="form-control" placeholder="CVV"><br>
+        <button class="btn btn-primary" onclick="sendOTP()">Send OTP</button>
+    </div>
+
+    <!-- OTP SECTION -->
+    <div id="otpSection" class="container text-center hidden">
+        <h2>Enter OTP</h2>
+        <input type="text" id="otp" class="form-control" placeholder="Enter OTP"><br>
+        <button class="btn btn-success" onclick="verifyOTP()">Submit OTP</button>
+    </div>
+
+    <!-- TICKET SUMMARY -->
+    <div id="ticketSummary" class="container text-center hidden" >
+        <h2 >Ticket Summary</h2>
+        <p id="summaryText"></p>
+        <button class="btn btn-primary" onclick="saveTicket()">Save Ticket</button>
+        <button class="btn btn-success" onclick="printTicket()">Print Ticket</button>
+    </div>
+
+    
+</body>
+</html>
